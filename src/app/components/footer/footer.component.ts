@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  showText1 = true
+  text1 = 'Terms & Condition'
+  text2 = 'Privacy Policy'
+  text3 = 'Contact Us'
+
+  textObject = ['Privacy Policy', 'Contact Us']
+
   constructor() { }
 
   ngOnInit(): void {
