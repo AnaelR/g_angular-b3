@@ -23,8 +23,9 @@
             <p>Bandwidth: <b class="text-primary">{{ item.bandwidth }}</b></p>
             <p>Onlinespace: {{ item.space }}</p>
             <p>Support: {{item.support}}</p>
-            <p>{{item.domain}} Domain</p>
-            <p class="mb-0">No Hidden Fees</p>
+            <p *ngIf="item.domain === 1">{{item.domain}} Domain</p>
+            <p *ngIf="item.domain > 1">{{item.domain}} Domains</p>
+            <p class="mb-0">No Hiddenn Fees</p>
           </div>
           <div>
             <a href="#" class="btn btn-primary btn-round">Join Now</a>

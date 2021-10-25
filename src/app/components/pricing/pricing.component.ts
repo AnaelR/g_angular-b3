@@ -12,9 +12,9 @@ export class PricingComponent implements OnInit {
 
   constructor() {
     this.pricingData = [
-      new PricingData("29$", "1GB", "50MB", "No", "1", true),
-      new PricingData("59$", "1GB", "50MB", "No", "1", false),
-      new PricingData("79$", "1GB", "50MB", "No", "1", true)
+      new PricingData("29$", "1GB", "50MB", "No", 1, true),
+      new PricingData("59$", "1GB", "50MB", "No", 2, false),
+      new PricingData("79$", "1GB", "50MB", "No", 3, true)
     ]
   }
 
@@ -35,9 +35,9 @@ class PricingData {
   bandwidth: string
   space:string
   support: string
-  domain: string
+  domain: number
   isActive: boolean
-  constructor(price: string, bandwidth: string, space: string, support: string, domain: string, isActive: boolean) {
+  constructor(price: string, bandwidth: string, space: string, support: string, domain: number, isActive: boolean) {
     this.price = price
     this.bandwidth = bandwidth
     this.space = space
