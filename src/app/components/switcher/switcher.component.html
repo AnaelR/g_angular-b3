@@ -8,33 +8,18 @@
 
 <!-- Style switcher -->
 <!-- FIXME add condition on style depending on if its open or not-->
-<div id="style-switcher">
+<div id="style-switcher" [style]="isVisible?'left: 0':'left: -189px'">
     <div>
         <h3>Select your color</h3>
       <!-- FIXME *ngFor with function 's call on click button -->
         <ul class="pattern">
-            <li>
-                <a class="color1 pointer"></a>
-            </li>
-            <li>
-                <a class="color2 pointer"></a>
-            </li>
-            <li>
-                <a class="color3 pointer"></a>
-            </li>
-            <li>
-                <a class="color4 pointer"></a>
-            </li>
-            <li>
-                <a class="color5 pointer"></a>
-            </li>
-            <li>
-                <a class="color6 pointer"></a>
+            <li *ngFor="let theme of themeList; let i=index">
+                <a [ngClass]="'color'+(i+1)" class="pointer" (click)="setTheme(theme)"></a>
             </li>
         </ul>
     </div>
     <div class="bottom">
-        <a class="settings pointer">
+        <a (click)="switcherReveal()" class="settings pointer">
           <i class="ti-settings ti-spin"></i>
         </a>
     </div>

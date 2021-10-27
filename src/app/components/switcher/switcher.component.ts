@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'switcher',
@@ -8,18 +9,33 @@ import {Component} from '@angular/core';
 
 export class SwitcherComponent {
 
-  public windowScroll() :void {
+  themeList = ['default', 'pink', 'yellow', 'green', 'purple', 'light-blue']
+
+  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  }
+
+  isVisible = false
+
+  public switcherReveal(): void {
+    this.isVisible = !this.isVisible
+  }
+
+  public setTheme(color: string): void {
+    const colors = document.getElementById('color-opt')
+    if (!colors) return
+      colors.setAttribute('href', "assets/css/colors/" + color + ".css")
+  }
+
+  public windowScroll(): void {
+    const html = document.getElementById("back-to-top")
+    if (!html) return
     if (
       document.body.scrollTop > 100 ||
       document.documentElement.scrollTop > 100
     ) {
-      // @ts-ignore
-      document.getElementById("back-to-top").style.display = "inline";
-    } else {
-      // @ts-ignore
-      document.getElementById("back-to-top").style.display = "none";
-    }
+        html.style.display = "inline";
+      } else {
+        html.style.display = "none";
+      }
   }
-
-
 }
