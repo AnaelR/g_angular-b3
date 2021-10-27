@@ -16,6 +16,7 @@ import { ServicesComponent } from './services/services.component';
 import { CtaComponent } from './cta/cta.component';
 import { TeamComponent } from './team/team.component';
 import { IconsComponent } from './team/icons/icons.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,11 +33,12 @@ import { IconsComponent } from './team/icons/icons.component';
     TeamComponent,
     IconsComponent
   ],
-  imports: [
-    CommonModule,
-    CarouselModule,
-    ScrollToModule.forRoot()
-  ],
+    imports: [
+        CommonModule,
+        CarouselModule,
+        ScrollToModule.forRoot(),
+        FormsModule
+    ],
   exports: [
     ClientComponent,
     SwitcherComponent,

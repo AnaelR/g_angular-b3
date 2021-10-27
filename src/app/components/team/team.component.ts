@@ -31,7 +31,7 @@ export class TeamComponent implements OnInit {
         text: "You want customer to your store. Easily your coupans and has Clooger.",
         isActive: false,
         links: new TeamMemberLinksModel({
-          github: 'https://github.com/AnaelR',
+          // github: 'https://github.com/AnaelR',
           skype: 'https://anael.dev',
           twitter: 'https://twitter.com/AnaelR'
         })
