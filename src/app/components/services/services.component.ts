@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class ServicesComponent implements OnInit {
 
   dataService: ServiceData[]
+  @Output()toggleFeaturesTextChange = new EventEmitter<string>()
 
   constructor() {
     this.dataService = [
@@ -24,6 +25,11 @@ export class ServicesComponent implements OnInit {
       new ServiceData("ti-headphone", "Easy to customize", "Ut enim ad minim veniam, quis nostrud exercitation\n" +
         "ullamco laboris nisi ut aliquip ex ea commodo consequat."),
     ]
+  }
+
+  emitToggleFeaturesTextChange() : void{
+    const text = "Ceci est mon nouveau text"
+    this.toggleFeaturesTextChange.emit(text)
   }
 
   ngOnInit(): void {

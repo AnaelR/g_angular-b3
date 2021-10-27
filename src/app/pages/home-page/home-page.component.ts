@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   currentSection = 'home-page';
   timerInterval: any
   toggleSocialLinks: boolean = true
+  toggleFeaturesTextChange: string = 'Texte par defaut'
 
   constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly changeDetectorRef: ChangeDetectorRef) {
     // exécuté en premier !
@@ -25,6 +26,11 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onEmitToggleSocialLinksEvent(event: boolean){
     this.toggleSocialLinks = event
+    this.changeDetectorRef.detectChanges()
+  }
+
+  onEmitToggleFeaturesTextChange(event: string){
+    this.toggleFeaturesTextChange = event
     this.changeDetectorRef.detectChanges()
   }
 

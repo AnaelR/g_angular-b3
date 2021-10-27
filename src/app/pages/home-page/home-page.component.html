@@ -78,11 +78,11 @@
   <!-- END HOME -->
 
   <!-- START SERVICES -->
-  <app-services></app-services>
+  <app-services (toggleFeaturesTextChange)="onEmitToggleFeaturesTextChange($event)"></app-services>
   <!-- END SERVICES -->
 
   <!-- START FEATURES -->
-  <app-features></app-features>
+  <app-features [toggleFeaturesTextChange]="toggleFeaturesTextChange"></app-features>
   <!-- END FEATURES -->
 
   <!-- note : client est un selector, il permet de charger le component ainsi que son html & css -->
