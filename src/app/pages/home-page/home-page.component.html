@@ -89,7 +89,7 @@
   <client></client>
 
   <!-- START TEAM-->
-  <app-team></app-team>
+  <app-team [toggleSocialLinks]="toggleSocialLinks" ></app-team>
   <!-- END TEAM -->
 
   <!-- START FAQ -->
@@ -97,7 +97,7 @@
   <!-- END FAQ -->
 
   <!-- START CTA -->
-  <app-cta></app-cta>
+  <app-cta (toggleSocialLinksEvent)="onEmitToggleSocialLinksEvent($event)"></app-cta>
   <!-- START CTA -->
 
   <!-- START PRICING -->

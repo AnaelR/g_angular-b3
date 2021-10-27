@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'home-page', //selecteur html pour appeler le compo
   templateUrl: './home-page.component.html',// template associé
   styleUrls: ['./home-page.component.scss']// style associé pour surcharger les styles principaux
-
 })
+
 
 // HomePageComponent convention de nommage PascalCase pour les noms de classe
 export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -14,11 +14,18 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   // variables et functions convention de nomage camelCase
   currentSection = 'home-page';
   timerInterval: any
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  toggleSocialLinks: boolean = true
+
+  constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly changeDetectorRef: ChangeDetectorRef) {
     // exécuté en premier !
 
     // exemple de log à checker dans la console du navigateur
     console.log('(exemple de log) section courante: ' + this.currentSection); // utilisation de this pour appels à fonctions, variables, ...
+  }
+
+  onEmitToggleSocialLinksEvent(event: boolean){
+    this.toggleSocialLinks = event
+    this.changeDetectorRef.detectChanges()
   }
 
   ngOnInit() {

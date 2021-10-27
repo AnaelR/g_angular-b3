@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TeamMemberModel} from "../../models/team-member.model";
 import {TeamMemberLinksModel} from "../../models/team-member-links.model";
 
@@ -11,6 +11,7 @@ import {TeamMemberLinksModel} from "../../models/team-member-links.model";
 export class TeamComponent implements OnInit {
 
   teamMemberList: TeamMemberModel[]
+  @Input()toggleSocialLinks: boolean
 
   constructor() {
     this.teamMemberList = [
