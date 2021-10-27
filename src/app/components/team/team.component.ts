@@ -1,39 +1,56 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {TeamMemberModel} from "../../models/team-member.model";
+import {TeamMemberLinksModel} from "../../models/team-member-links.model";
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
+
 export class TeamComponent implements OnInit {
 
-  dataTeam: DataTeam[]
+  teamMemberList: TeamMemberModel[]
 
   constructor() {
-    this.dataTeam = [
-      new DataTeam(true, "../../../../../assets/images/team/team-2.png", "@Rigoberto Valenza", "You want customer to your store. Easily your coupans and has\n" +
-        "Clooger."),
-      new DataTeam(false, "../../../../../assets/images/team/team-1.png", "@Venessa Smith", "You want customer to your store. Easily your coupans and has\n" +
-        "Clooger."),
-      new DataTeam(true, "../../../../../assets/images/team/team-3.png", "@Donald Laughlin", "You want customer to your store. Easily your coupans and has\n" +
-        "Clooger.")
+    this.teamMemberList = [
+      new TeamMemberModel({
+        name: '@Donald Laughlin',
+        text: "You want customer to your store. Easily your coupans and has Clooger.",
+        img: "../../../../../assets/images/team/team-3.png",
+        isActive: true,
+        links: new TeamMemberLinksModel({
+          github: 'https://github.com/AnaelR',
+          skype: 'https://anael.dev',
+          twitter: 'https://twitter.com/AnaelR'
+        })
+      }),
+      new TeamMemberModel({
+        img: "../../../../../assets/images/team/team-2.png",
+        name: "@Rigoberto Valenza",
+        text: "You want customer to your store. Easily your coupans and has Clooger.",
+        isActive: false,
+        links: new TeamMemberLinksModel({
+          github: 'https://github.com/AnaelR',
+          skype: 'https://anael.dev',
+          twitter: 'https://twitter.com/AnaelR'
+        })
+      }),
+      new TeamMemberModel({
+        img: "../../../../../assets/images/team/team-1.png",
+        name: "@Venessa Smith",
+        text: "You want customer to your store. Easily your coupans and has Clooger.",
+        isActive: true,
+        links: new TeamMemberLinksModel({
+          github: 'https://github.com/AnaelR',
+          skype: 'https://anael.dev',
+          twitter: 'https://twitter.com/AnaelR'
+        })
+      })
     ]
   }
 
   ngOnInit(): void {
   }
 
-}
-
-class DataTeam {
-  isActive: boolean
-  img: string
-  name: string
-  description: string
-  constructor(isActive: boolean, img: string, name: string, description: string) {
-    this.isActive = isActive
-    this.img = img
-    this.name = name
-    this.description = description
-  }
 }

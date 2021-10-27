@@ -10,7 +10,7 @@
     </div>
     <div class="row mt-5">
       <!-- FIXME use *ngFor -->
-      <div class="col-lg-4" *ngFor="let item of dataTeam">
+      <div class="col-lg-4" *ngFor="let item of teamMemberList">
         <div [ngClass]="{'active': item.isActive}" class="text-center bg-white team-box mt-3 p-5">
           <div class="">
             <img src="{{item.img}}" alt=""
@@ -18,7 +18,7 @@
           </div>
           <div class="team-name">
             <p class="fw-bold mb-0 mt-4">{{item.name}}</p>
-            <p class="text-muted mt-4">{{item.description}}</p>
+            <p class="text-muted mt-4">{{item.text}}</p>
           </div>
           <app-icons></app-icons>
         </div>
