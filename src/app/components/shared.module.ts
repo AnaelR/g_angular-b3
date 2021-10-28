@@ -16,7 +16,7 @@ import { ServicesComponent } from './services/services.component';
 import { CtaComponent } from './cta/cta.component';
 import { TeamComponent } from './team/team.component';
 import { IconsComponent } from './team/icons/icons.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TextReducerPipe} from "../pipe/text-reducer.pipe";
 
 @NgModule({
@@ -40,6 +40,7 @@ import {TextReducerPipe} from "../pipe/text-reducer.pipe";
         CarouselModule,
         ScrollToModule.forRoot(),
         FormsModule,
+        ReactiveFormsModule,
     ],
   exports: [
     ClientComponent,
