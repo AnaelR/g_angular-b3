@@ -17,6 +17,7 @@ import { CtaComponent } from './cta/cta.component';
 import { TeamComponent } from './team/team.component';
 import { IconsComponent } from './team/icons/icons.component';
 import {FormsModule} from "@angular/forms";
+import {TextReducerPipe} from "../pipe/text-reducer.pipe";
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import {FormsModule} from "@angular/forms";
     ServicesComponent,
     CtaComponent,
     TeamComponent,
-    IconsComponent
+    IconsComponent,
+    TextReducerPipe
   ],
     imports: [
         CommonModule,
         CarouselModule,
         ScrollToModule.forRoot(),
-        FormsModule
+        FormsModule,
     ],
   exports: [
     ClientComponent,
@@ -50,7 +52,8 @@ import {FormsModule} from "@angular/forms";
     FaqComponent,
     CtaComponent,
     PricingComponent,
-    ContactComponent
+    ContactComponent,
+    TextReducerPipe
   ]
 })
 export class SharedModule {
